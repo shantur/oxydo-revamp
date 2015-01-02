@@ -575,7 +575,8 @@ void baseband_xmm_set_power_status(unsigned int status)
 		}
 
 		if (!wake_lock_active(&wakelock))
-			wake_lock(&wakelock);
+			wake_lock_timeout(&wakelock, HZ/10 * 10);
+			// HZ/10 * 10 should become HZ/10 * timeout_val in the future.
 
 		pr_debug("gpio host active high->\n");
 		break;
