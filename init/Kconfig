@@ -928,6 +928,14 @@ config GCC_48_FIXES
 
 	  If unsure, say N.
 
+config GRAPHITE
+	bool "Graphite flags"
+	default n
+	help
+	  Adds graphite flags. Should work just fine on supported compilers.
+
+	  If unsure, say N.
+
 config SYSCTL
 	bool
 
